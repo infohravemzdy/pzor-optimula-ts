@@ -1,0 +1,54 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NameOfConcept = exports.OptimulaConceptConst = void 0;
+var OptimulaConceptConst;
+(function (OptimulaConceptConst) {
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_TIMESHEETS_PLAN"] = 1001] = "CONCEPT_TIMESHEETS_PLAN";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_TIMESHEETS_WORK"] = 1002] = "CONCEPT_TIMESHEETS_WORK";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_TIMEACTUAL_WORK"] = 1003] = "CONCEPT_TIMEACTUAL_WORK";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_PAYMENT_BASIS"] = 2001] = "CONCEPT_PAYMENT_BASIS";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_PAYMENT_HOURS"] = 2002] = "CONCEPT_PAYMENT_HOURS";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_PAYMENT_FIXED"] = 2003] = "CONCEPT_PAYMENT_FIXED";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_OPTIMUS_BASIS"] = 2011] = "CONCEPT_OPTIMUS_BASIS";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_OPTIMUS_HOURS"] = 2012] = "CONCEPT_OPTIMUS_HOURS";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_OPTIMUS_FIXED"] = 2013] = "CONCEPT_OPTIMUS_FIXED";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_OPTIMUS_NETTO"] = 2014] = "CONCEPT_OPTIMUS_NETTO";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_REDUCED_BASIS"] = 2021] = "CONCEPT_REDUCED_BASIS";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_REDUCED_HOURS"] = 2022] = "CONCEPT_REDUCED_HOURS";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_REDUCED_FIXED"] = 2023] = "CONCEPT_REDUCED_FIXED";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_REDUCED_NETTO"] = 2024] = "CONCEPT_REDUCED_NETTO";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_AGRWORK_HOURS"] = 2031] = "CONCEPT_AGRWORK_HOURS";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_AGRTASK_HOURS"] = 2032] = "CONCEPT_AGRTASK_HOURS";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_ALLOWCE_MFULL"] = 3001] = "CONCEPT_ALLOWCE_MFULL";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_ALLOWCE_HFULL"] = 3002] = "CONCEPT_ALLOWCE_HFULL";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_ALLOWCE_HOURS"] = 3003] = "CONCEPT_ALLOWCE_HOURS";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_ALLOWCE_DAILY"] = 3004] = "CONCEPT_ALLOWCE_DAILY";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_ALLDOWN_DAILY"] = 3005] = "CONCEPT_ALLDOWN_DAILY";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_OFFWORK_HOURS"] = 3011] = "CONCEPT_OFFWORK_HOURS";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_OFFTASK_HOURS"] = 3012] = "CONCEPT_OFFTASK_HOURS";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_OFFSETS_HFULL"] = 3013] = "CONCEPT_OFFSETS_HFULL";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_OFFSETS_HOURS"] = 3014] = "CONCEPT_OFFSETS_HOURS";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_OFFSETS_DAILY"] = 3015] = "CONCEPT_OFFSETS_DAILY";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_OFFDOWN_DAILY"] = 3016] = "CONCEPT_OFFDOWN_DAILY";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_SETTLEM_TARGETS"] = 4001] = "CONCEPT_SETTLEM_TARGETS";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_SETTLEM_TARNETT"] = 4002] = "CONCEPT_SETTLEM_TARNETT";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_SETTLEM_AGRWORK"] = 4003] = "CONCEPT_SETTLEM_AGRWORK";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_SETTLEM_AGRTASK"] = 4004] = "CONCEPT_SETTLEM_AGRTASK";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_SETTLEM_ALLOWCE"] = 4005] = "CONCEPT_SETTLEM_ALLOWCE";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_SETTLEM_ALLNETT"] = 4006] = "CONCEPT_SETTLEM_ALLNETT";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_SETTLEM_OFFWORK"] = 4011] = "CONCEPT_SETTLEM_OFFWORK";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_SETTLEM_OFFTASK"] = 4012] = "CONCEPT_SETTLEM_OFFTASK";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_SETTLEM_OFFSETS"] = 4013] = "CONCEPT_SETTLEM_OFFSETS";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_SETTLEM_RESULTS"] = 4014] = "CONCEPT_SETTLEM_RESULTS";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_SETTLEM_RESNETT"] = 4015] = "CONCEPT_SETTLEM_RESNETT";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_INCOMES_TAXFREE"] = 5001] = "CONCEPT_INCOMES_TAXFREE";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_INCOMES_TAXBASE"] = 5002] = "CONCEPT_INCOMES_TAXBASE";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_INCOMES_TAXWINS"] = 5003] = "CONCEPT_INCOMES_TAXWINS";
+    OptimulaConceptConst[OptimulaConceptConst["CONCEPT_INCOMES_SUMMARY"] = 5004] = "CONCEPT_INCOMES_SUMMARY";
+})(OptimulaConceptConst = exports.OptimulaConceptConst || (exports.OptimulaConceptConst = {}));
+function NameOfConcept(item) {
+    var concept = OptimulaConceptConst[item];
+    return concept;
+}
+exports.NameOfConcept = NameOfConcept;
+//# sourceMappingURL=ConceptsCode.js.map

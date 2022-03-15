@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "build",
+    "lib": [
+      "es2015.iterable"
+    ]
+  },
+  "include": [
+    "src/proj/**/*",
+    "src/test/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
