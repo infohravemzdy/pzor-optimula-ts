@@ -118,8 +118,8 @@ export class TimesheetsPlanConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), TimesheetsPlanConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -133,8 +133,11 @@ export class TimesheetsPlanConSpec extends OptimulaConceptSpec {
         return new TimesheetsPlanConSpec(ConceptCode.get(TimesheetsPlanConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new TimesheetsPlanResult(target, spec, 0);
-
+        const fullSheetHrsVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new TimesheetsPlanResult(target, spec, fullSheetHrsVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -158,8 +161,8 @@ export class TimesheetsWorkConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), TimesheetsWorkConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -173,8 +176,12 @@ export class TimesheetsWorkConSpec extends OptimulaConceptSpec {
         return new TimesheetsWorkConSpec(ConceptCode.get(TimesheetsWorkConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new TimesheetsWorkResult(target, spec, 0);
-
+        const timeSheetHrsVal = 0;
+        const holiSheetHrsVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new TimesheetsWorkResult(target, spec, timeSheetHrsVal, holiSheetHrsVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -198,8 +205,8 @@ export class TimeactualWorkConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), TimeactualWorkConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -213,8 +220,13 @@ export class TimeactualWorkConSpec extends OptimulaConceptSpec {
         return new TimeactualWorkConSpec(ConceptCode.get(TimeactualWorkConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new TimeactualWorkResult(target, spec, 0);
-
+        const workSheetHrsVal = 0;
+        const workSheetDayVal = 0;
+        const overSheetHrsVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new TimeactualWorkResult(target, spec, workSheetHrsVal, workSheetDayVal, overSheetHrsVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -239,8 +251,8 @@ export class PaymentBasisConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), PaymentBasisConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -254,8 +266,11 @@ export class PaymentBasisConSpec extends OptimulaConceptSpec {
         return new PaymentBasisConSpec(ConceptCode.get(PaymentBasisConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new PaymentBasisResult(target, spec, 0);
-
+        const paymentBasisVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new PaymentBasisResult(target, spec, paymentBasisVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -279,8 +294,8 @@ export class PaymentHoursConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), PaymentHoursConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -294,8 +309,12 @@ export class PaymentHoursConSpec extends OptimulaConceptSpec {
         return new PaymentHoursConSpec(ConceptCode.get(PaymentHoursConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new PaymentHoursResult(target, spec, 0);
-
+        const paymentBasisVal = 0;
+        const paymentHoursVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new PaymentHoursResult(target, spec, paymentBasisVal, paymentHoursVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -316,8 +335,8 @@ export class PaymentFixedConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), PaymentFixedConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -331,8 +350,11 @@ export class PaymentFixedConSpec extends OptimulaConceptSpec {
         return new PaymentFixedConSpec(ConceptCode.get(PaymentFixedConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new PaymentFixedResult(target, spec, 0);
-
+        const paymentBasisVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new PaymentFixedResult(target, spec, paymentBasisVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -357,8 +379,8 @@ export class OptimusBasisConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), OptimusBasisConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -372,8 +394,11 @@ export class OptimusBasisConSpec extends OptimulaConceptSpec {
         return new OptimusBasisConSpec(ConceptCode.get(OptimusBasisConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new OptimusBasisResult(target, spec, 0);
-
+        const optimusBasisVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new OptimusBasisResult(target, spec, optimusBasisVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -397,8 +422,8 @@ export class OptimusHoursConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), OptimusHoursConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -412,8 +437,12 @@ export class OptimusHoursConSpec extends OptimulaConceptSpec {
         return new OptimusHoursConSpec(ConceptCode.get(OptimusHoursConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new OptimusHoursResult(target, spec, 0);
-
+        const optimusBasisVal = 0;
+        const optimusHoursVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new OptimusHoursResult(target, spec, optimusBasisVal, optimusHoursVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -434,8 +463,8 @@ export class OptimusFixedConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), OptimusFixedConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -449,8 +478,11 @@ export class OptimusFixedConSpec extends OptimulaConceptSpec {
         return new OptimusFixedConSpec(ConceptCode.get(OptimusFixedConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new OptimusFixedResult(target, spec, 0);
-
+        const optimusBasisVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new OptimusFixedResult(target, spec, optimusBasisVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -471,8 +503,8 @@ export class OptimusNettoConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), OptimusNettoConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -486,8 +518,12 @@ export class OptimusNettoConSpec extends OptimulaConceptSpec {
         return new OptimusNettoConSpec(ConceptCode.get(OptimusNettoConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new OptimusNettoResult(target, spec, 0);
-
+        const optimusBasisVal = 0;
+        const optimusExtraVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new OptimusNettoResult(target, spec, optimusBasisVal, optimusExtraVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -513,8 +549,8 @@ export class ReducedBasisConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), ReducedBasisConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -528,8 +564,11 @@ export class ReducedBasisConSpec extends OptimulaConceptSpec {
         return new ReducedBasisConSpec(ConceptCode.get(ReducedBasisConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new ReducedBasisResult(target, spec, 0);
-
+        const articleTarget = ArticleCode.zero();
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new ReducedBasisResult(target, spec, articleTarget, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -555,8 +594,8 @@ export class ReducedHoursConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), ReducedHoursConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -570,8 +609,11 @@ export class ReducedHoursConSpec extends OptimulaConceptSpec {
         return new ReducedHoursConSpec(ConceptCode.get(ReducedHoursConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new ReducedHoursResult(target, spec, 0);
-
+        const articleTarget = ArticleCode.zero();
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new ReducedHoursResult(target, spec, articleTarget, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -597,8 +639,8 @@ export class ReducedFixedConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), ReducedFixedConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -612,8 +654,11 @@ export class ReducedFixedConSpec extends OptimulaConceptSpec {
         return new ReducedFixedConSpec(ConceptCode.get(ReducedFixedConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new ReducedFixedResult(target, spec, 0);
-
+        const articleTarget = ArticleCode.zero();
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new ReducedFixedResult(target, spec, articleTarget, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -640,8 +685,8 @@ export class ReducedNettoConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), ReducedNettoConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -655,8 +700,11 @@ export class ReducedNettoConSpec extends OptimulaConceptSpec {
         return new ReducedNettoConSpec(ConceptCode.get(ReducedNettoConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new ReducedNettoResult(target, spec, 0);
-
+        const articleTarget = ArticleCode.zero();
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new ReducedNettoResult(target, spec, articleTarget, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -682,8 +730,8 @@ export class AgrworkHoursConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), AgrworkHoursConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -697,8 +745,14 @@ export class AgrworkHoursConSpec extends OptimulaConceptSpec {
         return new AgrworkHoursConSpec(ConceptCode.get(AgrworkHoursConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new AgrworkHoursResult(target, spec, 0);
-
+        const agrWorkTarifVal = 0;
+        const agrWorkRatioVal = 0;
+        const agrWorkLimitVal = 0;
+        const agrHourLimitVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new AgrworkHoursResult(target, spec, agrWorkTarifVal, agrWorkRatioVal, agrWorkLimitVal, agrHourLimitVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -724,8 +778,8 @@ export class AgrtaskHoursConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), AgrtaskHoursConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -739,8 +793,14 @@ export class AgrtaskHoursConSpec extends OptimulaConceptSpec {
         return new AgrtaskHoursConSpec(ConceptCode.get(AgrtaskHoursConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new AgrtaskHoursResult(target, spec, 0);
-
+        const agrWorkTarifVal = 0;
+        const agrWorkRatioVal = 0;
+        const agrWorkLimitVal = 0;
+        const agrHourLimitVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new AgrtaskHoursResult(target, spec, agrWorkTarifVal, agrWorkRatioVal, agrWorkLimitVal, agrHourLimitVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -764,8 +824,8 @@ export class AllowceMfullConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), AllowceMfullConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -779,8 +839,11 @@ export class AllowceMfullConSpec extends OptimulaConceptSpec {
         return new AllowceMfullConSpec(ConceptCode.get(AllowceMfullConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new AllowceMfullResult(target, spec, 0);
-
+        const allowceBasisVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new AllowceMfullResult(target, spec, allowceBasisVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -804,8 +867,8 @@ export class AllowceHfullConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), AllowceHfullConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -819,8 +882,12 @@ export class AllowceHfullConSpec extends OptimulaConceptSpec {
         return new AllowceHfullConSpec(ConceptCode.get(AllowceHfullConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new AllowceHfullResult(target, spec, 0);
-
+        const allowceTarifVal = 0;
+        const allowceHfullVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new AllowceHfullResult(target, spec, allowceTarifVal, allowceHfullVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -844,8 +911,8 @@ export class AllowceHoursConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), AllowceHoursConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -859,8 +926,11 @@ export class AllowceHoursConSpec extends OptimulaConceptSpec {
         return new AllowceHoursConSpec(ConceptCode.get(AllowceHoursConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new AllowceHoursResult(target, spec, 0);
-
+        const allowceTarifVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new AllowceHoursResult(target, spec, allowceTarifVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -884,8 +954,8 @@ export class AllowceDailyConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), AllowceDailyConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -899,8 +969,11 @@ export class AllowceDailyConSpec extends OptimulaConceptSpec {
         return new AllowceDailyConSpec(ConceptCode.get(AllowceDailyConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new AllowceDailyResult(target, spec, 0);
-
+        const allowceDailyVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new AllowceDailyResult(target, spec, allowceDailyVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -924,8 +997,8 @@ export class AlldownDailyConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), AlldownDailyConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -939,8 +1012,11 @@ export class AlldownDailyConSpec extends OptimulaConceptSpec {
         return new AlldownDailyConSpec(ConceptCode.get(AlldownDailyConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new AlldownDailyResult(target, spec, 0);
-
+        const allowceDailyVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new AlldownDailyResult(target, spec, allowceDailyVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -964,8 +1040,8 @@ export class OffworkHoursConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), OffworkHoursConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -979,8 +1055,14 @@ export class OffworkHoursConSpec extends OptimulaConceptSpec {
         return new OffworkHoursConSpec(ConceptCode.get(OffworkHoursConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new OffworkHoursResult(target, spec, 0);
-
+        const agrWorkTarifVal = 0;
+        const agrWorkRatioVal = 0;
+        const agrWorkLimitVal = 0;
+        const agrHourLimitVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new OffworkHoursResult(target, spec, agrWorkTarifVal, agrWorkRatioVal, agrWorkLimitVal, agrHourLimitVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1004,8 +1086,8 @@ export class OfftaskHoursConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), OfftaskHoursConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1019,8 +1101,14 @@ export class OfftaskHoursConSpec extends OptimulaConceptSpec {
         return new OfftaskHoursConSpec(ConceptCode.get(OfftaskHoursConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new OfftaskHoursResult(target, spec, 0);
-
+        const agrWorkTarifVal = 0;
+        const agrWorkRatioVal = 0;
+        const agrWorkLimitVal = 0;
+        const agrHourLimitVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new OfftaskHoursResult(target, spec, agrWorkTarifVal, agrWorkRatioVal, agrWorkLimitVal, agrHourLimitVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1044,8 +1132,8 @@ export class OffsetsHfullConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), OffsetsHfullConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1059,8 +1147,12 @@ export class OffsetsHfullConSpec extends OptimulaConceptSpec {
         return new OffsetsHfullConSpec(ConceptCode.get(OffsetsHfullConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new OffsetsHfullResult(target, spec, 0);
-
+        const allowceTarifVal = 0;
+        const allowceHfullVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new OffsetsHfullResult(target, spec, allowceTarifVal, allowceHfullVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1084,8 +1176,8 @@ export class OffsetsHoursConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), OffsetsHoursConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1099,8 +1191,11 @@ export class OffsetsHoursConSpec extends OptimulaConceptSpec {
         return new OffsetsHoursConSpec(ConceptCode.get(OffsetsHoursConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new OffsetsHoursResult(target, spec, 0);
-
+        const allowceTarifVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new OffsetsHoursResult(target, spec, allowceTarifVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1124,8 +1219,8 @@ export class OffsetsDailyConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), OffsetsDailyConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1139,8 +1234,11 @@ export class OffsetsDailyConSpec extends OptimulaConceptSpec {
         return new OffsetsDailyConSpec(ConceptCode.get(OffsetsDailyConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new OffsetsDailyResult(target, spec, 0);
-
+        const allowceDailyVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new OffsetsDailyResult(target, spec, allowceDailyVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1164,8 +1262,8 @@ export class OffdownDailyConSpec extends OptimulaConceptSpec {
         super(_code, ConceptSpec.constToPathArray(_path), OffdownDailyConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1179,8 +1277,11 @@ export class OffdownDailyConSpec extends OptimulaConceptSpec {
         return new OffdownDailyConSpec(ConceptCode.get(OffdownDailyConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new OffdownDailyResult(target, spec, 0);
-
+        const allowceDailyVal = 0;
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new OffdownDailyResult(target, spec, allowceDailyVal, specResultValue, specResultBasis);
+    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1201,8 +1302,8 @@ export class SettlemTargetsConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), SettlemTargetsConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1216,8 +1317,9 @@ export class SettlemTargetsConSpec extends OptimulaConceptSpec {
         return new SettlemTargetsConSpec(ConceptCode.get(SettlemTargetsConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new SettlemTargetsResult(target, spec, 0);
-
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new SettlemTargetsResult(target, spec, specResultValue, specResultBasis);    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1238,8 +1340,8 @@ export class SettlemTarnettConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), SettlemTarnettConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1253,8 +1355,9 @@ export class SettlemTarnettConSpec extends OptimulaConceptSpec {
         return new SettlemTarnettConSpec(ConceptCode.get(SettlemTarnettConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new SettlemTarnettResult(target, spec, 0);
-
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new SettlemTarnettResult(target, spec, specResultValue, specResultBasis);    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1275,8 +1378,8 @@ export class SettlemAgrworkConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), SettlemAgrworkConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1290,8 +1393,9 @@ export class SettlemAgrworkConSpec extends OptimulaConceptSpec {
         return new SettlemAgrworkConSpec(ConceptCode.get(SettlemAgrworkConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new SettlemAgrworkResult(target, spec, 0);
-
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new SettlemAgrworkResult(target, spec, specResultValue, specResultBasis);    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1312,8 +1416,8 @@ export class SettlemAgrtaskConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), SettlemAgrtaskConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1327,8 +1431,9 @@ export class SettlemAgrtaskConSpec extends OptimulaConceptSpec {
         return new SettlemAgrtaskConSpec(ConceptCode.get(SettlemAgrtaskConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new SettlemAgrtaskResult(target, spec, 0);
-
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new SettlemAgrtaskResult(target, spec, specResultValue, specResultBasis);    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1349,8 +1454,8 @@ export class SettlemAllowceConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), SettlemAllowceConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1364,8 +1469,9 @@ export class SettlemAllowceConSpec extends OptimulaConceptSpec {
         return new SettlemAllowceConSpec(ConceptCode.get(SettlemAllowceConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new SettlemAllowceResult(target, spec, 0);
-
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new SettlemAllowceResult(target, spec, specResultValue, specResultBasis);    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1386,8 +1492,8 @@ export class SettlemAllnettConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), SettlemAllnettConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1401,8 +1507,9 @@ export class SettlemAllnettConSpec extends OptimulaConceptSpec {
         return new SettlemAllnettConSpec(ConceptCode.get(SettlemAllnettConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new SettlemAllnettResult(target, spec, 0);
-
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new SettlemAllnettResult(target, spec, specResultValue, specResultBasis);    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1423,8 +1530,8 @@ export class SettlemOffworkConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), SettlemOffworkConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1438,8 +1545,9 @@ export class SettlemOffworkConSpec extends OptimulaConceptSpec {
         return new SettlemOffworkConSpec(ConceptCode.get(SettlemOffworkConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new SettlemOffworkResult(target, spec, 0);
-
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new SettlemOffworkResult(target, spec, specResultValue, specResultBasis);    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1460,8 +1568,8 @@ export class SettlemOfftaskConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), SettlemOfftaskConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1475,8 +1583,9 @@ export class SettlemOfftaskConSpec extends OptimulaConceptSpec {
         return new SettlemOfftaskConSpec(ConceptCode.get(SettlemOfftaskConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new SettlemOfftaskResult(target, spec, 0);
-
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new SettlemOfftaskResult(target, spec, specResultValue, specResultBasis);    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1497,8 +1606,8 @@ export class SettlemOffsetsConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), SettlemOffsetsConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1512,8 +1621,9 @@ export class SettlemOffsetsConSpec extends OptimulaConceptSpec {
         return new SettlemOffsetsConSpec(ConceptCode.get(SettlemOffsetsConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new SettlemOffsetsResult(target, spec, 0);
-
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new SettlemOffsetsResult(target, spec, specResultValue, specResultBasis);    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1534,8 +1644,8 @@ export class SettlemResultsConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), SettlemResultsConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1549,8 +1659,9 @@ export class SettlemResultsConSpec extends OptimulaConceptSpec {
         return new SettlemResultsConSpec(ConceptCode.get(SettlemResultsConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new SettlemResultsResult(target, spec, 0);
-
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new SettlemResultsResult(target, spec, specResultValue, specResultBasis);    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1571,8 +1682,8 @@ export class SettlemResnettConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), SettlemResnettConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1586,8 +1697,9 @@ export class SettlemResnettConSpec extends OptimulaConceptSpec {
         return new SettlemResnettConSpec(ConceptCode.get(SettlemResnettConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new SettlemResnettResult(target, spec, 0);
-
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new SettlemResnettResult(target, spec, specResultValue, specResultBasis);    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1608,8 +1720,8 @@ export class IncomesTaxfreeConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), IncomesTaxfreeConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1623,8 +1735,9 @@ export class IncomesTaxfreeConSpec extends OptimulaConceptSpec {
         return new IncomesTaxfreeConSpec(ConceptCode.get(IncomesTaxfreeConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new IncomesTaxfreeResult(target, spec, 0);
-
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new IncomesTaxfreeResult(target, spec, specResultValue, specResultBasis);    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1645,8 +1758,8 @@ export class IncomesTaxbaseConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), IncomesTaxbaseConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1660,8 +1773,9 @@ export class IncomesTaxbaseConSpec extends OptimulaConceptSpec {
         return new IncomesTaxbaseConSpec(ConceptCode.get(IncomesTaxbaseConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new IncomesTaxbaseResult(target, spec, 0);
-
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new IncomesTaxbaseResult(target, spec, specResultValue, specResultBasis);    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1682,8 +1796,8 @@ export class IncomesTaxwinsConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), IncomesTaxwinsConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1697,8 +1811,9 @@ export class IncomesTaxwinsConSpec extends OptimulaConceptSpec {
         return new IncomesTaxwinsConSpec(ConceptCode.get(IncomesTaxwinsConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new IncomesTaxwinsResult(target, spec, 0);
-
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new IncomesTaxwinsResult(target, spec, specResultValue, specResultBasis);    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }
@@ -1719,8 +1834,8 @@ export class IncomesSummaryConSpec extends OptimulaConceptSpec {
         super(_code, Array<ArticleCode>(), IncomesSummaryConSpec.ConceptEval);
     }
     defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps,
-                      month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
-                      targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
+        month: MonthCode, contractTerms: IContractTermList, positionTerms: IPositionTermList,
+        targets: ITermTargetList, vars: VariantCode) : ITermTargetList {
         const con = ContractCode.zero()
         const pos = PositionCode.zero()
         const targetsLength = Array.from(targets).length;
@@ -1734,8 +1849,9 @@ export class IncomesSummaryConSpec extends OptimulaConceptSpec {
         return new IncomesSummaryConSpec(ConceptCode.get(IncomesSummaryConProv.CONCEPT_CODE));
     }
     private static ConceptEval(target: ITermTarget, spec: IArticleSpec, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList): BuilderResultList {
-        const resultsValues: ITermResult = new IncomesSummaryResult(target, spec, 0);
-
+        const specResultValue = 0;
+        const specResultBasis = 0;
+        const resultsValues: ITermResult = new IncomesSummaryResult(target, spec, specResultValue, specResultBasis);    
         return new Array(Result.ok<ITermResult, ITermResultError>(resultsValues));
     }
 }

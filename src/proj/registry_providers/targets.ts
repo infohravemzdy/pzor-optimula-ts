@@ -19,7 +19,7 @@ export class TimesheetsPlanTarget extends OptimulaTermTarget {
     }
     FullSheetHrsVal: number;
     targetMessage(): string {
-        return `Basis: ${this.FullSheetHrsVal}`
+        return `Basis: ${this.FullSheetHrsVal}`;
     }
 }
 
@@ -36,9 +36,9 @@ export class TimesheetsWorkTarget extends OptimulaTermTarget {
     TimeSheetHrsVal: number;
     HoliSheetHrsVal: number;
     targetMessage(): string {
-        const TimeSheet = OperationsDec.divide(new bigDecimal(this.TimeSheetHrsVal), OptimulaTermTarget.BIG_SIXTY);
-        const HoliSheet = OperationsDec.divide(new bigDecimal(this.HoliSheetHrsVal), OptimulaTermTarget.BIG_SIXTY);
-        return `Basis: ${this.TargetBasis}, Time Hours: ${TimeSheet}, Holi Hours: ${HoliSheet}`;
+        const timeSheetHrsVal = OperationsDec.divide(new bigDecimal(this.TimeSheetHrsVal), OptimulaTermTarget.BIG_SIXTY);
+        const holiSheetHrsVal = OperationsDec.divide(new bigDecimal(this.HoliSheetHrsVal), OptimulaTermTarget.BIG_SIXTY);
+        return `Basis: ${this.TargetBasis}, Time Hours: ${timeSheetHrsVal}, Holi Hours: ${holiSheetHrsVal}`;
     }
 }
 
@@ -57,10 +57,10 @@ export class TimeactualWorkTarget extends OptimulaTermTarget {
     WorkSheetDayVal: number;
     OverSheetHrsVal: number;
     targetMessage(): string {
-        const WorkSheetHrs = OperationsDec.divide(new bigDecimal(this.WorkSheetHrsVal), OptimulaTermTarget.BIG_SIXTY);
-        const WorkSheetDay = OperationsDec.divide(new bigDecimal(this.WorkSheetDayVal), OptimulaTermTarget.BIG_100);
-        const OverSheetHrs = OperationsDec.divide(new bigDecimal(this.OverSheetHrsVal), OptimulaTermTarget.BIG_100);
-        return `Basis: ${this.TargetBasis}, Work Hours: ${WorkSheetHrs}, Work Days: ${WorkSheetDay}, Over Hours: ${OverSheetHrs}`;
+        const workSheetHrsVal = OperationsDec.divide(new bigDecimal(this.WorkSheetHrsVal), OptimulaTermTarget.BIG_SIXTY);
+        const workSheetDayVal = OperationsDec.divide(new bigDecimal(this.WorkSheetDayVal), OptimulaTermTarget.BIG_100);
+        const overSheetHrsVal = OperationsDec.divide(new bigDecimal(this.OverSheetHrsVal), OptimulaTermTarget.BIG_100);
+        return `Basis: ${this.TargetBasis}, Work Hours: ${workSheetHrsVal}, Work Days: ${workSheetDayVal}, Over Hours: ${overSheetHrsVal}`;
     }
 }
 
@@ -92,9 +92,9 @@ export class PaymentHoursTarget extends OptimulaTermTarget {
     PaymentBasisVal: number;
     PaymentHoursVal: number;
     targetMessage(): string {
-        const PaymentBasis = OperationsDec.divide(new bigDecimal(this.PaymentBasisVal), OptimulaTermTarget.BIG_100);
-        const PaymentHours = OperationsDec.divide(new bigDecimal(this.PaymentHoursVal), OptimulaTermTarget.BIG_SIXTY);
-        return `Basis: ${this.TargetBasis}, Target Basis: ${PaymentBasis}, Target Hours: ${PaymentHours}`;
+        const paymentBasisVal = OperationsDec.divide(new bigDecimal(this.PaymentBasisVal), OptimulaTermTarget.BIG_100);
+        const paymentHoursVal = OperationsDec.divide(new bigDecimal(this.PaymentHoursVal), OptimulaTermTarget.BIG_SIXTY);
+        return `Basis: ${this.TargetBasis}, Target Basis: ${paymentBasisVal}, Target Hours: ${paymentHoursVal}`;
     }
 }
 
@@ -141,9 +141,9 @@ export class OptimusHoursTarget extends OptimulaTermTarget {
     OptimusBasisVal: number;
     OptimusHoursVal: number;
     targetMessage(): string {
-        const OptimusBasis = OperationsDec.divide(new bigDecimal(this.OptimusBasisVal), OptimulaTermTarget.BIG_100);
-        const OptimusHours = OperationsDec.divide(new bigDecimal(this.OptimusHoursVal), OptimulaTermTarget.BIG_SIXTY);
-        return `Basis: ${this.TargetBasis}, Target Basis: ${OptimusBasis}, Target Hours: ${OptimusHours}`;
+        const optimusBasisVal = OperationsDec.divide(new bigDecimal(this.OptimusBasisVal), OptimulaTermTarget.BIG_100);
+        const optimusHoursVal = OperationsDec.divide(new bigDecimal(this.OptimusHoursVal), OptimulaTermTarget.BIG_SIXTY);
+        return `Basis: ${this.TargetBasis}, Target Basis: ${optimusBasisVal}, Target Hours: ${optimusHoursVal}`;
     }
 }
 
@@ -175,9 +175,9 @@ export class OptimusNettoTarget extends OptimulaTermTarget {
     OptimusBasisVal: number;
     OptimusExtraVal: number;
     targetMessage(): string {
-        const OptimusBasis = OperationsDec.divide(new bigDecimal(this.OptimusBasisVal), OptimulaTermTarget.BIG_100);
-        const OptimusExtra = OperationsDec.divide(new bigDecimal(this.OptimusExtraVal), OptimulaTermTarget.BIG_100);
-        return `Basis: ${this.TargetBasis}, Target Basis: ${OptimusBasis}, Target Extra: ${OptimusExtra}`;
+        const optimusBasisVal = OperationsDec.divide(new bigDecimal(this.OptimusBasisVal), OptimulaTermTarget.BIG_100);
+        const optimusExtraVal = OperationsDec.divide(new bigDecimal(this.OptimusExtraVal), OptimulaTermTarget.BIG_100);
+        return `Basis: ${this.TargetBasis}, Target Basis: ${optimusBasisVal}, Target Extra: ${optimusExtraVal}`;
     }
 }
 
@@ -192,7 +192,7 @@ export class ReducedBasisTarget extends OptimulaTermTarget {
     }
     ArticleTarget: ArticleCode;
     targetMessage(): string {
-        return `Basis: ${this.TargetBasis}, Target Article: ${NameOfArticle(this.ArticleTarget.value)}`
+        return `Basis: ${this.TargetBasis}, Target Article: ${NameOfArticle(this.ArticleTarget.value)}`;
     }
 }
 
@@ -258,11 +258,11 @@ export class AgrworkHoursTarget extends OptimulaTermTarget {
     AgrWorkLimitVal: number;
     AgrHourLimitVal: number;
     targetMessage(): string {
-        const AgrWorkTarif = OperationsDec.divide(new bigDecimal(this.AgrWorkTarifVal), OptimulaTermTarget.BIG_100);
-        const AgrWorkRatio = OperationsDec.divide(new bigDecimal(this.AgrWorkRatioVal), OptimulaTermTarget.BIG_100);
-        const AgrWorkLimit = OperationsDec.divide(new bigDecimal(this.AgrWorkLimitVal), OptimulaTermTarget.BIG_100);
-        const AgrHourLimit = OperationsDec.divide(new bigDecimal(this.AgrHourLimitVal), OptimulaTermTarget.BIG_100);
-        return `Basis: ${this.TargetBasis}, Target Tariff: ${AgrWorkTarif}, Target Ratio: ${AgrWorkRatio}, Limit Value: ${AgrWorkLimit}, Limit Hours: ${AgrHourLimit}`;
+        const agrWorkTarifVal = OperationsDec.divide(new bigDecimal(this.AgrWorkTarifVal), OptimulaTermTarget.BIG_100);
+        const agrWorkRatioVal = OperationsDec.divide(new bigDecimal(this.AgrWorkRatioVal), OptimulaTermTarget.BIG_100);
+        const agrWorkLimitVal = OperationsDec.divide(new bigDecimal(this.AgrWorkLimitVal), OptimulaTermTarget.BIG_100);
+        const agrHourLimitVal = OperationsDec.divide(new bigDecimal(this.AgrHourLimitVal), OptimulaTermTarget.BIG_100);
+        return `Basis: ${this.TargetBasis}, Target Tariff: ${agrWorkTarifVal}, Target Ratio: ${agrWorkRatioVal}, Limit Value: ${agrWorkLimitVal}, Limit Hours: ${agrHourLimitVal}`;
     }
 }
 
@@ -283,11 +283,11 @@ export class AgrtaskHoursTarget extends OptimulaTermTarget {
     AgrWorkLimitVal: number;
     AgrHourLimitVal: number;
     targetMessage(): string {
-        const AgrWorkTarif = OperationsDec.divide(new bigDecimal(this.AgrWorkTarifVal), OptimulaTermTarget.BIG_100);
-        const AgrWorkRatio = OperationsDec.divide(new bigDecimal(this.AgrWorkRatioVal), OptimulaTermTarget.BIG_100);
-        const AgrWorkLimit = OperationsDec.divide(new bigDecimal(this.AgrWorkLimitVal), OptimulaTermTarget.BIG_100);
-        const AgrHourLimit = OperationsDec.divide(new bigDecimal(this.AgrHourLimitVal), OptimulaTermTarget.BIG_100);
-        return `Basis: ${this.TargetBasis}, Target Tariff: ${AgrWorkTarif}, Target Ratio: ${AgrWorkRatio}, Limit Value: ${AgrWorkLimit}, Limit Hours: ${AgrHourLimit}`;
+        const agrWorkTarifVal = OperationsDec.divide(new bigDecimal(this.AgrWorkTarifVal), OptimulaTermTarget.BIG_100);
+        const agrWorkRatioVal = OperationsDec.divide(new bigDecimal(this.AgrWorkRatioVal), OptimulaTermTarget.BIG_100);
+        const agrWorkLimitVal = OperationsDec.divide(new bigDecimal(this.AgrWorkLimitVal), OptimulaTermTarget.BIG_100);
+        const agrHourLimitVal = OperationsDec.divide(new bigDecimal(this.AgrHourLimitVal), OptimulaTermTarget.BIG_100);
+        return `Basis: ${this.TargetBasis}, Target Tariff: ${agrWorkTarifVal}, Target Ratio: ${agrWorkRatioVal}, Limit Value: ${agrWorkLimitVal}, Limit Hours: ${agrHourLimitVal}`;
     }
 }
 
@@ -319,9 +319,9 @@ export class AllowceHfullTarget extends OptimulaTermTarget {
     AllowceTarifVal: number;
     AllowceHfullVal: number;
     targetMessage(): string {
-        const AllowceTarif = OperationsDec.divide(new bigDecimal(this.AllowceTarifVal), OptimulaTermTarget.BIG_100);
-        const AllowceHfull = OperationsDec.divide(new bigDecimal(this.AllowceHfullVal), OptimulaTermTarget.BIG_SIXTY);
-        return `Basis: ${this.TargetBasis}, Target Tariff: ${AllowceTarif}, Target Hours: ${AllowceHfull}`;
+        const allowceTarifVal = OperationsDec.divide(new bigDecimal(this.AllowceTarifVal), OptimulaTermTarget.BIG_100);
+        const allowceHfullVal = OperationsDec.divide(new bigDecimal(this.AllowceHfullVal), OptimulaTermTarget.BIG_SIXTY);
+        return `Basis: ${this.TargetBasis}, Target Tariff: ${allowceTarifVal}, Target Hours: ${allowceHfullVal}`;
     }
 }
 
@@ -387,11 +387,11 @@ export class OffworkHoursTarget extends OptimulaTermTarget {
     AgrWorkLimitVal: number;
     AgrHourLimitVal: number;
     targetMessage(): string {
-        const AgrWorkTarif = OperationsDec.divide(new bigDecimal(this.AgrWorkTarifVal), OptimulaTermTarget.BIG_100);
-        const AgrWorkRatio = OperationsDec.divide(new bigDecimal(this.AgrWorkRatioVal), OptimulaTermTarget.BIG_100);
-        const AgrWorkLimit = OperationsDec.divide(new bigDecimal(this.AgrWorkLimitVal), OptimulaTermTarget.BIG_100);
-        const AgrHourLimit = OperationsDec.divide(new bigDecimal(this.AgrHourLimitVal), OptimulaTermTarget.BIG_100);
-        return `Basis: ${this.TargetBasis}, Target Tariff: ${AgrWorkTarif}, Target Ratio: ${AgrWorkRatio}, Limit Value: ${AgrWorkLimit}, Limit Hours: ${AgrHourLimit}`;
+        const agrWorkTarifVal = OperationsDec.divide(new bigDecimal(this.AgrWorkTarifVal), OptimulaTermTarget.BIG_100);
+        const agrWorkRatioVal = OperationsDec.divide(new bigDecimal(this.AgrWorkRatioVal), OptimulaTermTarget.BIG_100);
+        const agrWorkLimitVal = OperationsDec.divide(new bigDecimal(this.AgrWorkLimitVal), OptimulaTermTarget.BIG_100);
+        const agrHourLimitVal = OperationsDec.divide(new bigDecimal(this.AgrHourLimitVal), OptimulaTermTarget.BIG_100);
+        return `Basis: ${this.TargetBasis}, Target Tariff: ${agrWorkTarifVal}, Target Ratio: ${agrWorkRatioVal}, Limit Value: ${agrWorkLimitVal}, Limit Hours: ${agrHourLimitVal}`;
     }
 }
 
@@ -412,11 +412,11 @@ export class OfftaskHoursTarget extends OptimulaTermTarget {
     AgrWorkLimitVal: number;
     AgrHourLimitVal: number;
     targetMessage(): string {
-        const AgrWorkTarif = OperationsDec.divide(new bigDecimal(this.AgrWorkTarifVal), OptimulaTermTarget.BIG_100);
-        const AgrWorkRatio = OperationsDec.divide(new bigDecimal(this.AgrWorkRatioVal), OptimulaTermTarget.BIG_100);
-        const AgrWorkLimit = OperationsDec.divide(new bigDecimal(this.AgrWorkLimitVal), OptimulaTermTarget.BIG_100);
-        const AgrHourLimit = OperationsDec.divide(new bigDecimal(this.AgrHourLimitVal), OptimulaTermTarget.BIG_100);
-        return `Basis: ${this.TargetBasis}, Target Tariff: ${AgrWorkTarif}, Target Ratio: ${AgrWorkRatio}, Limit Value: ${AgrWorkLimit}, Limit Hours: ${AgrHourLimit}`;
+        const agrWorkTarifVal = OperationsDec.divide(new bigDecimal(this.AgrWorkTarifVal), OptimulaTermTarget.BIG_100);
+        const agrWorkRatioVal = OperationsDec.divide(new bigDecimal(this.AgrWorkRatioVal), OptimulaTermTarget.BIG_100);
+        const agrWorkLimitVal = OperationsDec.divide(new bigDecimal(this.AgrWorkLimitVal), OptimulaTermTarget.BIG_100);
+        const agrHourLimitVal = OperationsDec.divide(new bigDecimal(this.AgrHourLimitVal), OptimulaTermTarget.BIG_100);
+        return `Basis: ${this.TargetBasis}, Target Tariff: ${agrWorkTarifVal}, Target Ratio: ${agrWorkRatioVal}, Limit Value: ${agrWorkLimitVal}, Limit Hours: ${agrHourLimitVal}`;
     }
 }
 
@@ -433,9 +433,9 @@ export class OffsetsHfullTarget extends OptimulaTermTarget {
     AllowceTarifVal: number;
     AllowceHfullVal: number;
     targetMessage(): string {
-        const AllowceTarif = OperationsDec.divide(new bigDecimal(this.AllowceTarifVal), OptimulaTermTarget.BIG_100);
-        const AllowceHfull = OperationsDec.divide(new bigDecimal(this.AllowceHfullVal), OptimulaTermTarget.BIG_SIXTY);
-        return `Basis: ${this.TargetBasis}, Target Tariff: ${AllowceTarif}, Target Hours: ${AllowceHfull}`;
+        const allowceTarifVal = OperationsDec.divide(new bigDecimal(this.AllowceTarifVal), OptimulaTermTarget.BIG_100);
+        const allowceHfullVal = OperationsDec.divide(new bigDecimal(this.AllowceHfullVal), OptimulaTermTarget.BIG_SIXTY);
+        return `Basis: ${this.TargetBasis}, Target Tariff: ${allowceTarifVal}, Target Hours: ${allowceHfullVal}`;
     }
 }
 
